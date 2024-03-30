@@ -5,7 +5,7 @@ I made this project as my such practice as working on REST api's.
 
 "Popular Articles" - It fetches all the Popular Articles from NYT.com (New York Times) , and the filter option is available to filter the Articles such as most Shared/Emailed/Viewed and within the given period of time as 1 or 7 or 30 days.
 
-This site made using nice color palette and better responsive UI/UX experience .
+This app is made using nice color palette and better responsive UI/UX experience .
 
 ## Screenshots
 
