@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs'); %>
+
+
+
+    <% if (data.status === 'OK') { %>
+        <div class="container">
+            <% data.results.forEach((result) => { %>
+                <% let imageUrl = ''; %>
+                <% result.media.forEach((mediaItem) => { %>
+                    <% imageUrl = mediaItem['media-metadata'][2].url; %>
+                <% }); %>
+                <div class="card">
+                    <img src="<%= imageUrl %>" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="card-title"><%= result.title %></h2>
+                        <p class="card-text"><%= result.abstract %></p>
+                        <small class="text-muted"><%= result.published_date %></small>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+<%- include('partials/footer.ejs'); %>
