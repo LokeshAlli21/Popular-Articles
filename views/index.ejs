@@ -1,6 +1,39 @@
 <%- include('partials/header.ejs'); %>
 
-
+    <section class="header">
+        <div class="container search-bar">
+            <p class="default-opt">default options</p>
+            <form action="/search" method="post" class="form-search">
+                <div class="type">
+                    <label for="opt-type">Type</label>
+                    <select name="type" id="opt-type">
+                        <option value="emailed" selected>Emailed</option>
+                        <option value="shared" class="shared">Shared</option>
+                        <option value="viewed">Viewed</option>
+                    </select>
+                </div>
+                <div class="period">
+                    <label for="opt-period">Period</label>
+                    <select name="period" id="opt-period">
+                        <option value="1">1</option>
+                        <option value="7" selected>7</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <label for="sharedOnFB" class="sharedOnFB">
+                    <p>Shared on</p>
+                    <span>Facebook</span>
+                    <input type="checkbox" name="sharedOnFB" id="sharedOnFB" value="true">
+                    <div class="checkmark">
+                        <i class="lni lni-checkmark"></i>
+                    </div>
+                </label>
+                <button type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </section>
 
     <% if (data.status === 'OK') { %>
         <div class="container">
@@ -20,4 +53,18 @@
             <% }); %>
         </div>
     <% } %>
+
+    <script>
+        const selectedItemType = document.getElementById('opt-type');
+        const selectedItemPeriod = document.getElementById('opt-period');
+        const sharedOnFB = document.querySelector('.sharedOnFB');
+        selectedItemType.addEventListener('change', () => {
+            if (selectedItemType.value == 'shared') {
+                sharedOnFB.style.display = 'flex';
+            } else {
+                sharedOnFB.style.display = 'none';
+            }
+        });
+        
+    </script>
 <%- include('partials/footer.ejs'); %>
