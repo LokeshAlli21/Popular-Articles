@@ -2,33 +2,37 @@
 
     <section class="header">
         <div class="container search-bar">
-            <p class="default-opt">default options</p>
+            <!-- <p class="default-opt">default options</p> -->
             <form action="/search" method="post" class="form-search">
                 <div class="type">
-                    <label for="opt-type">Type</label>
-                    <select name="type" id="opt-type">
-                        <option value="emailed" selected>Emailed</option>
-                        <option value="shared" class="shared">Shared</option>
-                        <option value="viewed">Viewed</option>
-                    </select>
+                    <!-- <label for="opt-type">Type</label> -->
+                    <div class="select">
+                        <select name="type" id="opt-type" >
+                            <option value="emailed" selected>Emailed</option>
+                            <option value="shared" class="shared">Shared</option>
+                            <option value="viewed">Viewed</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="period">
-                    <label for="opt-period">Period</label>
-                    <select name="period" id="opt-period">
-                        <option value="1">1</option>
-                        <option value="7" selected>7</option>
-                        <option value="30">30</option>
-                    </select>
+                    <!-- <label for="opt-period">Period</label> -->
+                    <div class="select">
+                        <select name="period" id="opt-period">
+                            <option value="1">1</option>
+                            <option value="7" selected>7</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
                 </div>
                 <label for="sharedOnFB" class="sharedOnFB">
                     <p>Shared on</p>
-                    <span>Facebook</span>
+                    <span class="btn" style="margin: 0 10px; padding: 5px; border-radius: 5px;">Facebook</span>
                     <input type="checkbox" name="sharedOnFB" id="sharedOnFB" value="true">
                     <div class="checkmark">
-                        <i class="lni lni-checkmark"></i>
+                        <i class="lni lni-checkmark" style="display: block;"></i>
                     </div>
                 </label>
-                <button type="submit">
+                <button type="submit" class="btn">
                     Search
                 </button>
             </form>
